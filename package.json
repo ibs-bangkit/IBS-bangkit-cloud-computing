@@ -1,0 +1,31 @@
+{
+  "name": "serta-mulia",
+  "version": "1.0.0",
+  "main": "./src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "nodemon ./src/server.js",
+    "start": "node ./src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@google-cloud/firestore": "^7.10.0",
+    "@hapi/hapi": "^21.3.2",
+    "@tensorflow/tfjs-node": "^4.22.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "firebase": "^11.0.2",
+    "firebase-admin": "^13.0.1",
+    "firebase-tools": "^13.27.0",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
