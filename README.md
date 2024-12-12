@@ -142,3 +142,6 @@ Build using Node JS and Express framework. Server deployed at Google Cloud Run.
     }     
 ]
 ```
+
+## CLOUD ARCHITECTURE
+![image]()
