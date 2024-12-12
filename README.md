@@ -143,5 +143,5 @@ Build using Node JS and Express framework. Server deployed at Google Cloud Run.
 ]
 ```
 
-## CLOUD ARCHITECTURE
-![image]()
+## Google Cloud Architecture
+![image](model-test-img/gcloud%20artchitect.png)
