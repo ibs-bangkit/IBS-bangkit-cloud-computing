@@ -5,7 +5,7 @@ const storeData = require('../services/storeData');
 async function postPredictHandler(req, res) {
     const image = req.file.buffer;
     const { model } = req;
-    const { confidenceScore, label, explanation, suggestion } = await predictClassification(model, image);
+    const { accuracy, label, explanation, suggestion, resource } = await predictClassification(model, image);
     const id = crypto.randomUUID();
     const createdAt = new Date().toISOString();
 
@@ -14,7 +14,8 @@ async function postPredictHandler(req, res) {
         "result": label,
         "suggestion": suggestion,
         "explanation": explanation,
-        "confidenceScore": confidenceScore,
+        "resource": resource,
+        "accuracy": accuracy,
         "createdAt": createdAt
     }
 
@@ -22,7 +23,7 @@ async function postPredictHandler(req, res) {
 
     res.status(201).json({
         status: 'success',
-        message: confidenceScore > 90 ? 'Model is predicted successfully' : 'Model is predicted successfully but under threshold. Please use the correct picture',
+        message: accuracy > 90 ? 'Model is predicted successfully' : 'Model is predicted successfully but under threshold. Please use the correct picture',
         data
     })
 }

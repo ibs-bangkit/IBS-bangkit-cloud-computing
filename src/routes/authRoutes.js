@@ -1,15 +1,11 @@
-// routes/authRoutes.js
 const express = require("express");
-const { register, login, helloWorld } = require("../controllers/authController");
+const { register, login, helloWorld, googleAuth, googleAuthTest } = require("../controllers/authController");
 const router = express.Router();
 
-// POST request untuk register
 router.post("/register", register);
-
-// POST request untuk login
 router.post("/login", login);
-
-// GET request untuk test endpoint
+router.post("/google", googleAuth);
 router.get("/test", helloWorld);
+router.get("/testGoogle", googleAuthTest);
 
 module.exports = router;

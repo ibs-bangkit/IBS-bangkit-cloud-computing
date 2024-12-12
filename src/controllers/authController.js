@@ -2,6 +2,7 @@ require("dotenv").config();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { db } = require("../services/firebase");
+const admin = require("firebase-admin");
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
@@ -54,10 +55,55 @@ exports.login = async (req, res) => {
     }
 };
 
+exports.googleAuth = async (req, res) => {
+    const { idToken } = req.body;
+
+    if (!idToken) {
+        return res.status(400).json({ error: "ID Token is required" });
+    }
+
+    try {
+        // Verify the ID token with Firebase Admin
+        const decodedToken = await admin.auth().verifyIdToken(idToken);
+        const { uid, email, name, picture } = decodedToken;
+
+        // Check if user exists in Firestore
+        const userRef = db.collection("users").doc(email);
+        const user = await userRef.get();
+
+        if (!user.exists) {
+            // Save new user in Firestore
+            await userRef.set({
+                uid,
+                email,
+                displayName: name,
+                photoURL: picture,
+                createdAt: new Date().toISOString(),
+            });
+        }
+
+        // Generate JWT
+        const token = jwt.sign({ userId: email }, JWT_SECRET, { expiresIn: "1h" });
+
+        res.status(200).json({
+            message: "User successfully logged in with Google",
+            token,
+            user: { email, displayName: name, photoURL: picture },
+        });
+    } catch (err) {
+        console.error("Error authenticating user:", err);
+        res.status(500).json({ error: "Authentication failed" });
+    }
+};
+
 
 exports.helloWorld = (req, res) => {
     res.status(200).json({ message: "Hello, World!" });
 };
+
+exports.googleAuthTest = (req, res) => {
+    res.status(200).json({ message: "Google Auth API is running." });
+}
 
 // exports.login = async (req, res) => {
 //     try {
