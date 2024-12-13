@@ -23,13 +23,13 @@ async function predictClassification(model, image) {
         if (label === 'cardboard') {
             suggestion = "📦 Wah, ini kardus! Simpan atau daur ulang ya!"
             explanation = "Kardus bisa diubah menjadi bahan baru seperti kertas daur ulang. Ayo, bantu mengurangi limbah!"
-            resource = "https://youtu.be/-fvlyHqSbZQ?si=YPJ_SgdrV6paaBQ3"
+            resource = "https://www.youtube.com/watch?v=-fvlyHqSbZQ"
         };
 
         if (label === 'glass') {
             suggestion = "🍶 Ini berbahan kaca! Jangan dibuang sembarangan!"
             explanation = "Sampah berbahan kaca bisa dilebur dan dibuat menjadi kaca baru tanpa kehilangan kualitas. Daur ulang itu keren!"
-            resource = "https://youtu.be/Ny8Af_ADvtg?si=szvuXJWNLUbnC1NA"
+            resource = "https://www.youtube.com/watch?v=Ny8Af_ADvtg"
 
         };
 
@@ -42,20 +42,20 @@ async function predictClassification(model, image) {
         if (label === 'organic') {
             suggestion = "🍃 Ini sampah organik, komposin aja!"
             explanation = "Sampah organik bisa jadi pupuk alami untuk tanaman. Yuk, dukung pertanian berkelanjutan!"
-            resource = "https://youtu.be/kwajGch9cKA?si=PrztSz-lpIF1xAPb"
+            resource = "https://www.youtube.com/watch?v=kwajGch9cKA"
         };
 
         if (label === 'paper') {
             suggestion = "📜 Ini kertas! Mari selamatkan pohon!"
             explanation = "Kertas bisa didaur ulang hingga 5-7 kali. Dengan mendaur ulang, kita bisa menghemat banyak pohon."
-            resource = "https://youtu.be/1UoskWBm1h0?si=P5bXVS2DSm-U7T0d"
+            resource = "https://www.youtube.com/watch?v=1UoskWBm1h0"
 
         };
 
         if (label === 'plastic') {
             suggestion = "🛍️ Plastik terdeteksi! Pilah dengan bijak."
             explanation = "Plastik tertentu seperti PET, HDPE, dan PVC bisa didaur ulang. Yuk, kurangi penggunaan plastik sekali pakai!"
-            resource = "https://youtu.be/sbYlSF3nBPk?si=-lLMxuG1MTkBB5GQ"
+            resource = "https://www.youtube.com/watch?v=sbYlSF3nBPk"
 
         };
 

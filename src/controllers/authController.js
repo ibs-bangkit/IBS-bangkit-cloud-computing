@@ -96,7 +96,6 @@ exports.googleAuth = async (req, res) => {
     }
 };
 
-
 exports.helloWorld = (req, res) => {
     res.status(200).json({ message: "Hello, World!" });
 };
@@ -105,39 +104,3 @@ exports.googleAuthTest = (req, res) => {
     res.status(200).json({ message: "Google Auth API is running." });
 }
 
-// exports.login = async (req, res) => {
-//     try {
-//         const { email, password } = req.body;
-
-//         // Validasi input
-//         if (!email || !password) {
-//             return res.status(400).json({ message: "Email and password are required" });
-//         }
-
-//         // Retrieve user from Firestore
-//         const userRef = db.collection("users").doc(email);
-//         const user = await userRef.get();
-//         if (!user.exists) {
-//             return res.status(401).json({ message: "Invalid email or password" });
-//         }
-
-//         const userData = user.data();
-
-//         // Compare passwords
-//         const isValidPassword = await bcrypt.compare(password, userData.password);
-//         if (!isValidPassword) {
-//             return res.status(401).json({ message: "Invalid email or password" });
-//         }
-
-//         // Generate JWT
-//         const token = jwt.sign({ userId: email }, JWT_SECRET, { expiresIn: "1h" });
-
-//         res.status(200).json({
-//             message: "Login successful",
-//             token: token, // Pastikan token dikirimkan dalam format yang benar
-//         });
-//     } catch (err) {
-//         console.error(err);
-//         res.status(500).json({ message: "Internal server error", error: err.message });
-//     }
-// };

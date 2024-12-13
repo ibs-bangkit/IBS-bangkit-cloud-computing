@@ -105,10 +105,7 @@ Build using Node JS and Express framework. Server deployed at Google Cloud Run.
         "result": "metal",
         "suggestion": "🔩 Wow, ini sampah berbahan logam/metal! Ayo daur ulang!",
         "explanation": "Bahan metal sangat berharga dan bisa didaur ulang tanpa batas.",
-        "resource": [
-            "https://youtube.com/shorts/AhBsCNTTTPc?si=0_mmjmgpNsIj8ZIg",
-            "https://m.youtube.com/watch?v=ajEECRjRQEE&pp=ygUSI2Vrc3BlcmltZW5wZW1hbmFz"
-        ],
+        "resource" : "https://www.youtube.com/watch?v=1UoskWBm1h0",
         "accuracy": 100,
         "createdAt": "2024-12-12T10:00:11.343Z"
     }
