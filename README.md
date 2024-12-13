@@ -1,3 +1,8 @@
+# Indonesia Bebas Sampah (IBS) Application By C242-PS256 Capstone Project Bangkit 2024 #
+
+# About 
+Indonesia Bebas Sampah is a mobile application project aimed at empowering Indonesians with an easy-to-use tool for accurate waste classification, leveraging neural network-powered image recognition. This tool will enable users to identify and categorize waste types—plastics, organics, metals—directly from their smartphones, fostering more informed disposal decisions.
+
 # IBS-bangkit-cloud-computing
 The source code of IBS App API Back-End
 
