@@ -23,6 +23,8 @@ Build using Node JS and Express framework. Server deployed at Google Cloud Run.
 - Clone this repo
 - Open vs code with wsl (Windows Subsystem for Linux) terminal
 - Type `npm install/npm i` and enter
+- Create firebase project for register & login authentication and download the firebase-admin-sdk.json
+- Create firestore database in google cloud platform
 - Serve the Express app by typing `npm run start-dev`
 - It will run on http://localhost:8080
 
